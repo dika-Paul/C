@@ -1,0 +1,7 @@
+﻿  contact.cpp
+  main.cpp
+  read_Engine.cpp
+  view_Engine.cpp
+  正在生成代码...
+D:\我的世界\c语言\.vscode\通讯录\通讯录\read_Engine.cpp(16): warning C4715: “sex_chose”: 不是所有的控件路径都返回值
+  通讯录.vcxproj -> D:\我的世界\c语言\.vscode\通讯录\x64\Debug\通讯录.exe
