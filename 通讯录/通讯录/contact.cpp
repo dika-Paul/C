@@ -116,11 +116,12 @@ int add_M(const char* name, const char* phone, const SEX sex, const char* addr, 
 int del_M_N(const char* name)
 {
 	inf_L* ptr = find_M_N(name);
-	if (ptr == nullptr) { printf("²éÎÞ´ËÈË\n"); return 0; }
+	if (ptr == nullptr) { printf("æŸ¥æ— æ­¤äºº\n"); return 0; }
 	inf_L* tem_n = ptr->next;
 	inf_L* tem_p = ptr->pre;
 	clean_list(ptr);
 	free(ptr);
+	ptr == nullptr;
 	member--;
 	tem_p->next = tem_n;
 	if (tem_n != nullptr) { tem_n->pre = tem_p; }
@@ -130,11 +131,12 @@ int del_M_N(const char* name)
 int del_M_P(const char* phone)
 {
 	inf_L* ptr = find_M_N(phone);
-	if (ptr == nullptr) { printf("²éÎÞ´ËÈË\n"); return 0; }
+	if (ptr == nullptr) { printf("æŸ¥æ— æ­¤äºº\n"); return 0; }
 	inf_L* tem_n = ptr->next;
 	inf_L* tem_p = ptr->pre;
 	clean_list(ptr);
 	free(ptr);
+	ptr == nullptr;
 	member--;
 	tem_p->next = tem_n;
 	if (tem_n != nullptr) { tem_n->pre = tem_p; }
@@ -159,37 +161,37 @@ int change_M_P(const char* pre_Phone, const char* name, const char* phone, const
 
 void mem_OUT(mem_I* ptr)
 {
-	printf("ÐÕÃû£º%s\n", ptr->name);
-	printf("µç»°£º%s\n", ptr->ph_num);
+	printf("å§“åï¼š%s\n", ptr->name);
+	printf("ç”µè¯ï¼š%s\n", ptr->ph_num);
 	switch (ptr->sex)
 	{
 	case UN:
-		printf("ÐÔ±ð£ºÎ´Öª\n");
+		printf("æ€§åˆ«ï¼šæœªçŸ¥\n");
 		break;
 	case MALE:
-		printf("ÐÔ±ð£ºÄÐ\n");
+		printf("æ€§åˆ«ï¼šç”·\n");
 		break;
 	case FEMALE:
-		printf("ÐÔ±ð£ºÅ®\n");
+		printf("æ€§åˆ«ï¼šå¥³\n");
 		break;
 	default:
 		break;
 	}
-	printf("ÄêÁä£º%d\n", ptr->age);
-	printf("×¡Ö·£º%s\n", ptr->addr);
+	printf("å¹´é¾„ï¼š%d\n", ptr->age);
+	printf("ä½å€ï¼š%s\n", ptr->addr);
 	return;
 }
 void print_M_N(const char* name)
 {
 	inf_L* ptr = find_M_N(name);
-	if (ptr == nullptr) { printf("²éÎÞ´ËÈË\n"); return; }
+	if (ptr == nullptr) { printf("æŸ¥æ— æ­¤äºº\n"); return; }
 	mem_OUT(ptr->mem_Inf);
 	return;
 }
 void print_M_P(const char* phone)
 {
 	inf_L* ptr = find_M_P(phone);
-	if (ptr == nullptr) { printf("²éÎÞ´ËÈË\n"); return; }
+	if (ptr == nullptr) { printf("æŸ¥æ— æ­¤äºº\n"); return; }
 	mem_OUT(ptr->mem_Inf);
 	return;
 }
