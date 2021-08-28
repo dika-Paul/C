@@ -1,7 +1,16 @@
 ﻿  contact.cpp
-  main.cpp
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(119,6): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(134,6): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(159,32): warning C4474: printf: 格式字符串中传递的参数太多
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(159,32): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(160,32): warning C4474: printf: 格式字符串中传递的参数太多
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(160,32): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(175,32): warning C4474: printf: 格式字符串中传递的参数太多
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(175,32): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(176,32): warning C4474: printf: 格式字符串中传递的参数太多
+D:\Git\GitClone\Git\C\通讯录\通讯录\contact.cpp(176,32): message : 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
   read_Engine.cpp
-  view_Engine.cpp
   正在生成代码...
-D:\我的世界\c语言\.vscode\通讯录\通讯录\read_Engine.cpp(16): warning C4715: “sex_chose”: 不是所有的控件路径都返回值
-  通讯录.vcxproj -> D:\我的世界\c语言\.vscode\通讯录\x64\Debug\通讯录.exe
+D:\Git\GitClone\Git\C\通讯录\通讯录\read_Engine.cpp(16): warning C4715: “sex_chose”: 不是所有的控件路径都返回值
+  通讯录.vcxproj -> D:\Git\GitClone\Git\C\通讯录\x64\Debug\通讯录.exe

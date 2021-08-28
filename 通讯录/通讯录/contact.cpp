@@ -6,22 +6,17 @@
 #include<cstdlib>
 #include<cstring>
 
+//typedef struct member_Inf
+//{
+//char name[LENTH];
+//char ph_num[30];
+//SEX sex;
+//char addr[LENTH];
+//int age;
+//}mem_I;
 
-typedef struct member_Inf
-{
-	char name[LENTH];
-	char ph_num[30];
-	SEX sex;
-	char addr[LENTH];
-	int age;
-}mem_I;
 
-typedef struct inf_Link
-{
-	struct inf_Link* pre;
-	mem_I* mem_Inf;
-	struct inf_Link* next;
-}inf_L;
+
 
 int member = 0;
 inf_L* star_Member[MAXN];
