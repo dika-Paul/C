@@ -9,27 +9,30 @@
 
 using namespace std;
 using addr_data::head;
+using addr_data::num;
 
 bool data_import()
 {
     FILE* data_in = fopen("contactBook.bin", "rb");
     assert(data_in != nullptr);
     head = build_node();
-    char name[NAME_LEN];
-    char phone[PHONE_LEN];
-    short sex;
-    short age;
-    char addr[ADDR_LEN];
     con_b* ptr = head;
-    while (fscanf(data_in, "%s %s %hd %hd %s", name, phone, &sex, &age, addr) != EOF)
+    con_b* point = ptr;
+    per_i* per_info = build_mem();
+    while (fread(per_info, sizeof(per_i), 1, data_in))
     {
-        ptr->next = build_node();
-        assert(ptr->next != nullptr);
+        ptr->pre = point;
+        ptr->member = per_info;
+        num++;
+        point = ptr;
         ptr = ptr->next;
-        ptr->member = build_mem();
-        ptr->member->per_info_read(name, phone, sex, age, addr);
+        ptr = build_node();
+        point->next = ptr;
+        per_info = build_mem();
     }
-    ptr = nullptr;
+    free(per_info);
+    free(ptr);
+    point->next = nullptr;
     return true;
 }
 bool data_export()
@@ -37,12 +40,10 @@ bool data_export()
     FILE* data_out = fopen("contactBook.bin", "wb");
     con_b* ptr = head;
     if (ptr == nullptr) { return false; }
-    per_i* info;
-    while (ptr->next != nullptr)
+    while (ptr != nullptr)
     {
-        ptr = ptr->next;
-        info = ptr->member;
-        fprintf(data_out, "%s %s %hd %hd %s\n", info->name, info->phone, info->sex, info->age, info->addr);
+        fwrite(ptr->member, sizeof(per_i), 1, data_out);
+        ptr = ptr->next;     
     }
     return true;
 }

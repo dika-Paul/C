@@ -39,19 +39,24 @@ con_b* build_node()
 void member_insert(per_i* ptr)
 {
 	con_b* point = head;
-	while (point->next != nullptr)	{ point = point->next; }
-	con_b* node = build_node();
-	point->next = node;
-	node->pre = point;
-	node->member = ptr;
+	con_b* node = head;
+	while (point != nullptr) { node = point;  point = point->next; }
+	point = build_node();
+	point->pre = node;
+	point->member = ptr;
 	num++;
+	if (num == 1) { head = point; }
+	else
+	{
+		node->next = point;
+	}
 }
 void member_del(con_b* ptr)
 {
 	assert(ptr != nullptr);
 	con_b* ptr_pre = ptr->pre;
 	con_b* ptr_next = ptr->next;
-	ptr_pre->next = ptr_next;
+	if (ptr_pre != nullptr) { ptr_pre->next = ptr_next; }
 	if (ptr_next != nullptr) { ptr_next->pre = ptr_pre; }
 	ptr->pre = nullptr;
 	ptr->pre = nullptr;
@@ -74,12 +79,12 @@ void member_change(con_b* ptr, per_i* info)
 }
 void member_show()
 {
-	if (head->next == nullptr)
+	if (head == nullptr)
 	{
 		printf("没有成员\n");
 		return;
 	}
-	con_b* point = head->next;
+	con_b* point = head;
 	int no = 1;
 	while (point != nullptr)
 	{
@@ -91,7 +96,7 @@ void member_show()
 }
 void member_clean()
 {
-	con_b* ptr = head->next;
+	con_b* ptr = head;
 	con_b* point;
 	while (ptr != nullptr)
 	{
@@ -99,17 +104,17 @@ void member_clean()
 		ptr->pre = nullptr;
 		point = ptr->next;
 		ptr->next = nullptr;
+		free(ptr->member);
 		free(ptr);
 		ptr = point;
 		num--;
 	}
-	num++;
-	head = build_node();
+	head = nullptr;
 }
 con_b* member_find(char* str, int num)
 {
 	assert(num == 1 || num == 0);
-	con_b* point = head->next;
+	con_b* point = head;
 	switch (num)
 	{
 	case 0:
