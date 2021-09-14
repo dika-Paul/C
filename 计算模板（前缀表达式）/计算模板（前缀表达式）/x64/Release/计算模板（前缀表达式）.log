@@ -1,0 +1,18 @@
+﻿  compare.cpp
+  源.cpp
+D:\我的世界\c语言\.vscode\计算模板（前缀表达式）\计算模板（前缀表达式）\compute.h(31,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\我的世界\c语言\.vscode\计算模板（前缀表达式）\计算模板（前缀表达式）\compute.h(94): message : 查看对正在编译的函数 模板 实例化“void _expression_translate<T>(std::stack<_computing_data<T>,std::deque<_computing_data<T>,std::allocator<_computing_data<T>>>> &,const std::string)”的引用
+          with
+          [
+              T=int
+          ]
+D:\我的世界\c语言\.vscode\计算模板（前缀表达式）\计算模板（前缀表达式）\源.cpp(8): message : 查看对正在编译的函数 模板 实例化“T Compute<int>(std::string)”的引用
+          with
+          [
+              T=int
+          ]
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 350 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  计算模板（前缀表达式）.vcxproj -> D:\我的世界\c语言\.vscode\计算模板（前缀表达式）\x64\Release\计算模板（前缀表达式）.exe
